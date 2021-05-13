@@ -8,7 +8,7 @@ function Home(){
             Seja bem vindo ao Sistema de Cadastro de Produtos</p>
             <hr className="my-4"/>  
             <p className="lead">
-                <a className="btn btn-primary btn-lg" href="www.google.com" role="button">Cadastrar</a>
+                <a className="btn btn-primary btn-lg" href="/cadastroProdutos" role="button">Cadastrar</a>
             </p>
         </div>
     )

@@ -12,7 +12,7 @@ function Navbar(){
           <div className="collapse navbar-collapse" id="navbarColor02">
             <ul className="navbar-nav me-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="www.google.com">Home
+                <a className="nav-link" href="/">Home
                   <span className="visually-hidden">(current)</span>
                 </a>
               </li>

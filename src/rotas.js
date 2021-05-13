@@ -9,7 +9,7 @@ let rot = () => {
     return(
         <HashRouter>
             <Switch>
-                <Route exact path="/cadastro-produtos" component={CadastrarProduto}/>
+                <Route exact path="/cadastroProdutos" component={CadastrarProduto}/>
                 <Route exact path="/" component={Home}/>
             </Switch>
         </HashRouter>
