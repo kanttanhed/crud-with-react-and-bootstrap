@@ -1,5 +1,6 @@
 
 import React from 'react'
+import ProdutoService from '../../app/produtoService'
 
 const estadoInicial = {
         nome: '',
@@ -13,6 +14,11 @@ class CadastrarProduto extends React.Component{
 
    state = estadoInicial;
 
+   constructor(){
+       super()
+       this.service = new ProdutoService();
+   }
+
     //vai pegar o valor digitado do campo e atribui ao nome do campo
     onChange = (event) =>{
         const valor = event.target.value
@@ -21,7 +27,17 @@ class CadastrarProduto extends React.Component{
      }
 
      onSubmit = (event) => {
-         console.log(this.state)
+         const produto = {
+            nome: this.state.nome,
+            sku: this.state.sku,
+            descricao: this.state.descricao,
+            preco: this.state.preco,
+            fornecedor: this.state.fornecedor
+    }
+
+        this.service.salvar(produto)
+        this.limpaCampos()
+         console.log("Salvo com sucesso")
      }
 
      limpaCampos = () => {
