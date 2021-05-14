@@ -50,7 +50,7 @@ class CadastrarProduto extends React.Component{
         return(
             <div className="card">
                 <div className="card-header">
-                     Product Registration
+                     <center><b>CADASTRO DE PRODUTOS</b></center>
                 </div>
                 <div className="card-body">
 
@@ -62,9 +62,6 @@ class CadastrarProduto extends React.Component{
                         </div>
                       
                 }
-
-
-
 
                     <div className="row">
                         <div className="col-md-6">
@@ -89,18 +86,22 @@ class CadastrarProduto extends React.Component{
                                        className="form-control" />
                             </div>
                         </div>
+                    </div>
 
-                        <div className="row">
-                            <div className="col-md-12">
-                                <div className="form-group">
-                                    <label>Descrição</label>
-                                    <textarea name="descricao" 
-                                              onChange={this.onChange}
-                                              value={this.state.descricao} 
-                                              className="form-control" />
-                                </div>
+
+                    <div className="row">
+                        <div className="col-md-12">
+                            <div className="form-group">
+                                <label>Descrição</label>
+                                <textarea name="descricao" 
+                                            onChange={this.onChange}
+                                            value={this.state.descricao} 
+                                            className="form-control" />
                             </div>
                         </div>
+                    </div>
+
+                    
 
                         <div className="row">
                             <div className="col-md-6">
@@ -126,6 +127,9 @@ class CadastrarProduto extends React.Component{
                                 </div>
                             </div>
                         </div>
+                        
+                        <div className="row"/>
+                        <div className="col-md-6"></div>
 
                         <div className="row">
                             <div className="col-md-1">
@@ -134,10 +138,9 @@ class CadastrarProduto extends React.Component{
 
                             <div className="col-md-1">
                                 <button onClick={this.limpaCampos} className="btn btn-primary">Limpar</button>
-                            </div>
-                            
-                    </div>
-                    </div>
+                            </div>         
+            
+                        </div>
                 </div>
             </div>
         )
