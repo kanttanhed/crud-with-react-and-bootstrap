@@ -9,7 +9,7 @@ import ConsultaProdutos from './views/produtos/consulta'
 let rot = () => {
     return(
             <Switch>
-                <Route exact path="/cadastroProdutos" component={CadastrarProduto}/>
+                <Route exact path="/cadastroProdutos/:sku?" component={CadastrarProduto}/>
                 <Route exact path="/consultaProdutos" component={ConsultaProdutos}/>
                 <Route exact path="/" component={Home}/>
             </Switch>
