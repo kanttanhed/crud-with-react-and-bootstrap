@@ -17,10 +17,10 @@ function Navbar(){
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="www.google.com">Features</a>
+                <a className="nav-link" href="/cadastroProdutos">Cadastro</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="www.google.com">Pricing</a>
+                <a className="nav-link" href="/">Consulta</a>
               </li>
             </ul>
           </div>
