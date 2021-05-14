@@ -1,10 +1,12 @@
 import React from 'react';
 
+import{ Link } from 'react-router-dom'
+
 function Navbar(){
     return(
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="www.google.com">Plínio Salazar</a>
+        <Link className="navbar-brand" to="/">Plínio Salazar</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -12,15 +14,15 @@ function Navbar(){
           <div className="collapse navbar-collapse" id="navbarColor02">
             <ul className="navbar-nav me-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="/">Home
+                <Link className="nav-link" to="/">Home
                   <span className="visually-hidden">(current)</span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/cadastroProdutos">Cadastro</a>
+                <Link className="nav-link" to="/cadastroProdutos">Cadastro</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">Consulta</a>
+                <Link className="nav-link" to="consultaProdutos">Consulta</Link>
               </li>
             </ul>
           </div>
