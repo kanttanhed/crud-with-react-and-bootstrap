@@ -8,7 +8,8 @@ const estadoInicial = {
         descricao: '',
         preco: '',
         fornecedor:'',
-        sucesso: false
+        sucesso: false,
+        errors: []
 }
 
 class CadastrarProduto extends React.Component{
@@ -28,23 +29,29 @@ class CadastrarProduto extends React.Component{
      }
 
      onSubmit = (event) => {
-         const produto = {
+        const produto = {
             nome: this.state.nome,
             sku: this.state.sku,
             descricao: this.state.descricao,
             preco: this.state.preco,
             fornecedor: this.state.fornecedor
+        }
+        try{
+            this.service.salvar(produto)
+            this.limpaCampos()
+            this.setState({ sucesso: true})
+        }catch(erro){
+            const errors = erro.errors
+            this.setState({errors : errors})
+        }
+        
     }
 
-        this.service.salvar(produto)
-        this.limpaCampos()
-        this.setState({sucesso: true})
-     }
-
-     limpaCampos = () => {
+    limpaCampos = () => {
         this.setState(estadoInicial)
     }
 
+    
 
     render(){
         return(
@@ -61,6 +68,18 @@ class CadastrarProduto extends React.Component{
                         <strong>Well done!</strong> Cadastro realizado com sucesso.
                         </div>
                       
+                }
+
+                {this.state.length >0 &&
+                    
+                    this.state.errors.map( msg => {
+                        return(
+                            <div class="alert alert-dismissible alert-danger">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                <strong>Erro!</strong> {msg}
+                            </div>
+                        )
+                    })  
                 }
 
                     <div className="row">
