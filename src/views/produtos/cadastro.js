@@ -31,6 +31,7 @@ class CadastrarProduto extends React.Component{
      }
 
      onSubmit = (event) => {
+        event.preventDefault();
         const produto = {
             nome: this.state.nome,
             sku: this.state.sku,
@@ -78,26 +79,28 @@ class CadastrarProduto extends React.Component{
                 </div>
                 <div className="card-body">
 
+                <form id="frmProduto" onSubmit={this.onSubmit} >
+
                 {this.state.sucesso && 
                     
-                        <div class="alert alert-dismissible alert-success">
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        <div className="alert alert-dismissible alert-success">
+                        <button type="button" className="btn-close" data-bs-dismiss="alert"></button>
                         <strong>Well done!</strong> Cadastro realizado com sucesso.
                         </div>
                       
                 }
 
-                {this.state.length >0 &&
-                    
-                    this.state.errors.map( msg => {
-                        return(
-                            <div class="alert alert-dismissible alert-danger">
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                                <strong>Erro!</strong> {msg}
-                            </div>
-                        )
-                    })  
-                }
+                        { this.state.errors.length > 0 &&
+                        
+                        this.state.errors.map( msg => {
+                            return(
+                                <div className="alert alert-dismissible alert-danger">
+                                    <button type="button" className="btn-close" data-bs-dismiss="alert"></button>
+                                    <strong>Erro!</strong> {msg}
+                                </div>
+                            )
+                        })                          
+                    }                
 
                     <div className="row">
                         <div className="col-md-6">
@@ -170,7 +173,7 @@ class CadastrarProduto extends React.Component{
 
                         <div className="row">
                             <div className="col-md-1">
-                                <button onClick={this.onSubmit} className="btn btn-success">
+                                <button type="submit" className="btn btn-success">
                                     {this.state.atualizando ? 'Atualizar': 'Salvar'}</button>
                             </div>
 
@@ -179,6 +182,7 @@ class CadastrarProduto extends React.Component{
                             </div>         
             
                         </div>
+                    </form>
                 </div>
             </div>
         )
