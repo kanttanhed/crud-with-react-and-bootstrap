@@ -92,10 +92,10 @@ class CadastrarProduto extends React.Component{
 
                         { this.state.errors.length > 0 &&
                         
-                        this.state.errors.map( msg => {
+                        this.state.errors.map( (msg, index) => {
                             return(
-                                <div className="alert alert-dismissible alert-danger">
-                                    <button type="button" className="btn-close" data-bs-dismiss="alert"></button>
+                                <div key={index} className="alert alert-dismissible alert-danger">
+                                    <button type="button"  className="btn-close" data-bs-dismiss="alert"></button>
                                     <strong>Erro!</strong> {msg}
                                 </div>
                             )
